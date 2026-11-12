@@ -9,7 +9,7 @@ from jogo.config import LARGURA
 # Tipos de item
 LIXO = "lixo"
 FLOR = "flor"          # não é lixo
-CORACAO = "coracao"    # devolve uma vida (só no modo infinito)
+CORACAO = "coracao"    # dá uma vida no modo infinito
 
 
 class Item:

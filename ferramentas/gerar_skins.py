@@ -1,8 +1,5 @@
-"""Cria as skins coloridas a partir dos sprites da pasta 'vermelho'.
+#Mudar a cor da roupa do personagem principal
 
-Uso: python ferramentas/gerar_skins.py   (precisa de pillow e numpy)
-Só o moletom muda de cor; cabelo, pele e boné continuam iguais.
-"""
 import os
 
 import numpy as np
@@ -18,7 +15,6 @@ def recolorir(imagem, deslocamento):
     alfa = np.array(imagem)[..., 3]
     hsv = np.array(imagem.convert("RGB").convert("HSV")).astype(int)
     tom, saturacao, brilho = hsv[..., 0], hsv[..., 1], hsv[..., 2]
-    # moletom = tons vermelhos bem saturados (cabelo e pele têm tom mais alaranjado)
     moletom = ((tom >= 243) | (tom <= 6)) & (saturacao >= 60) & (brilho >= 40) & (alfa > 0)
     hsv[..., 0] = np.where(moletom, (tom + deslocamento) % 256, tom)
     rgb = Image.fromarray(hsv.astype(np.uint8), "HSV").convert("RGB")

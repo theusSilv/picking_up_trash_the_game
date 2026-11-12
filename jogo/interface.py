@@ -4,7 +4,7 @@ from jogo.config import (ALTURA, BRANCO, LARGURA, VERDE_ESCURO, VERMELHO)
 
 
 class Interface:
-    # Fontes e funções para desenhar textos, painéis e a barra do topo
+    # Fontes 
     def __init__(self):
         self.fonte_pequena = pygame.font.SysFont("arial", 20, bold=True)
         self.fonte_media = pygame.font.SysFont("arial", 28, bold=True)

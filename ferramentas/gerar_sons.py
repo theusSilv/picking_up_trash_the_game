@@ -1,8 +1,4 @@
-"""Gera os sons do jogo (estilo 8 bits) na pasta assets/sons.
-
-Uso: python ferramentas/gerar_sons.py
-Só precisa rodar de novo se quiser mudar algum som.
-"""
+#Gera os sons do jogo estilo 8 bits na pasta assets/sons.
 import math
 import os
 import struct

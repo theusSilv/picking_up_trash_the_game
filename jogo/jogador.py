@@ -5,16 +5,15 @@ import pygame
 from jogo.config import GRAVIDADE, LARGURA, PULO_VELOCIDADE, Y_CHAO
 from jogo.recursos import carregar_imagem
 
-FOLGA_PES = 3     # o contorno do sprite passa uns pixels abaixo dos pés
+FOLGA_PES = 3     # o contorno do sprite 
 
 
 def espelhar(imagens):
     return [pygame.transform.flip(img, True, False) for img in imagens]
 
-
+# Movimento do Sprite
 class Jogador:
     def __init__(self, skin="vermelho"):
-        # os sprites originais olham para a direita; para a esquerda a gente espelha
         parado = [carregar_imagem("personagem", skin, "parado_%d.png" % i) for i in (1, 2, 3)]
         correr = [carregar_imagem("personagem", skin, "correr_%d.png" % i) for i in range(1, 10)]
         pulo = [carregar_imagem("personagem", skin, nome + ".png")

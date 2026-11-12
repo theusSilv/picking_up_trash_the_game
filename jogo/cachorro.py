@@ -17,8 +17,8 @@ def carregar(nome, quantidade):
 
 
 class Cachorro:
-    # Companheiro do personagem. Só segue o dono e faz animações:
-    # ele não pega nem esbarra nos itens que caem.
+    #Só segue o dono e faz animações:
+    
     def __init__(self, dono):
         self.dono = dono
 
@@ -69,8 +69,6 @@ class Cachorro:
         else:
             self.tempo_parado += dt
             self.olhando = 1 if dono.x > self.x else -1     # olha para o dono
-
-        # escolhe a animação
         if velocidade > 320:
             novo = "correr"
         elif velocidade > 70:
@@ -84,7 +82,7 @@ class Cachorro:
             self.tempo_estado = 0.0
         self.tempo_estado += dt
 
-        # dá um pulinho quando o dono pula
+        # só pula quando o dono pula
         if dono.no_ar and not self.dono_no_ar and not self.no_ar:
             self.no_ar = True
             self.velocidade_y = -520
